@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>탭 모아</title>
+    <link rel="icon" href="icons/icon-32.png">
+    <link rel="stylesheet" href="popup.css">
+    <script src="popup-icons.js" defer></script>
+    <script src="popup.js" defer></script>
+  </head>
+  <body data-theme="default">
+    <div class="app">
+      <header class="topbar">
+        <nav id="view-switcher" data-active="default" role="tablist" aria-label="보기 방식">
+          <span class="jelly-indicator" aria-hidden="true"></span>
+          <button id="tab-default" class="view-tab is-active" type="button" role="tab" data-view="default" aria-controls="main-view" aria-selected="true">Default</button>
+          <button id="tab-tags" class="view-tab" type="button" role="tab" data-view="tags" aria-controls="main-view" aria-selected="false" tabindex="-1">By tag</button>
+          <button id="tab-starred" class="view-tab" type="button" role="tab" data-view="starred" aria-controls="main-view" aria-selected="false" tabindex="-1">Starred</button>
+        </nav>
+      </header>
+      <main id="main-view" role="tabpanel" aria-labelledby="tab-default" tabindex="0"></main>
+      <footer class="add-dock">
+        <button id="add-button" type="button" aria-label="새 항목 추가" title="새 항목 추가" aria-haspopup="dialog">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+      </footer>
+    </div>
+    <dialog id="editor-dialog" aria-labelledby="editor-title">
+      <div id="editor-content"></div>
+    </dialog>
+    <div id="status-message" role="status" aria-live="polite" hidden></div>
+  </body>
+</html>
